@@ -1,0 +1,11 @@
+# render.yaml
+services:
+  - type: web
+    name: ml-scraper-admin
+    env: static
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_SCRAPER_API_URL
+        value: https://ml-scraper-api.onrender.com # Se actualizará con la URL real
